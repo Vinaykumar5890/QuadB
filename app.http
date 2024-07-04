@@ -1,0 +1,30 @@
+
+GET  http://localhost:3000/todo/
+
+
+###
+
+DELETE http://localhost:3000/todo/2
+
+###
+
+PUT http://localhost:3000/todo/3
+Content-Type :application/json
+{
+  "Tasks":"Learn React js "
+
+}
+
+###
+
+POST http://localhost:3000/todoAdd
+Content-Type :application/json
+
+{
+  "Id": 2,
+  "Tasks": "Learn Css"
+}
+
+###
+
+GET http://localhost:3000/states/:1/
