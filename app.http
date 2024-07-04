@@ -8,23 +8,23 @@ DELETE http://localhost:3000/todo/2
 
 ###
 
-PUT http://localhost:3000/todo/3
+PUT http://localhost:3000/todo/1
 Content-Type :application/json
 {
-  "Tasks":"Learn React js "
+  "tasks":"Learn React js "
 
 }
 
 ###
 
-POST http://localhost:3000/todoAdd
+POST http://localhost:3000/todoadd
 Content-Type :application/json
 
 {
-  "Id": 2,
-  "Tasks": "Learn Css"
+  "id": 4,
+  "tasks": "Learn Angular js"
 }
 
 ###
 
-GET http://localhost:3000/states/:1/
+

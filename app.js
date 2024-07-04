@@ -38,38 +38,38 @@ app.get('/todo', async (request, response) => {
   response.send(Array)
 })
 
-app.post('/todoAdd', async (request, response) => {
-  const {Id, Tasks} = request.body
+app.post('/todoadd', async (request, response) => {
+  const {id, tasks} = request.body
   const postQuery = `
   INSERT INTO
-    todos (Id,Tasks)
+    todos (id,tasks)
   VALUES
-    (${Id}, '${Tasks}');`
+    (${id}, '${tasks}');`
   await database.run(postQuery)
   response.send('Tasks Successfully Added')
 })
 
-app.delete('/todo/:Id', async (request, response) => {
-  const {Id} = request.params
+app.delete('/todo/:id', async (request, response) => {
+  const {id} = request.params
   const deleteQuery = `
   DELETE FROM
     todos
   WHERE
-    Id = ${Id} 
+    id = ${id} 
   `
   await database.run(deleteQuery)
   response.send('Tasks Deleted')
 })
-app.put('/todo/:Id', async (request, response) => {
-  const {Id} = request.params
-  const {Tasks} = request.body
+app.put('/todo/:id', async (request, response) => {
+  const {id} = request.params
+  const {tasks} = request.body
   const updateDistrictQuery = `
   UPDATE
     todos
   SET
-   Tasks = '${Tasks}'
+   tasks = '${tasks}'
   WHERE
-    Id = ${Id};
+    id = ${id};
   `
 
   const updateQuery = await database.run(updateDistrictQuery)
